@@ -32,7 +32,7 @@ $contentBuy = $selectedContent["buy"];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>AngusMarkets - Заказ проекта <?php echo $contentName ?></title>
+    <title>AngusMarkets - project order</title>
     <style>
         .project form input[type="submit"]:hover {
             background-color: #45a049;
