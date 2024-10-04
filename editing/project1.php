@@ -6,7 +6,7 @@ $contents = [
     "three" => ["video" => "https://www.youtube.com/watch?si=Z-208GIsMo3xfL7H&v=zLjQoWyfMq0&feature=youtu.be", "date" => "15.08.2024", "name" => "Mista Play", "buy" => "150 руб"]
 ];
 
-$selectedContent = null; // Переменная для выбранного контента
+$selectedContent = null; 
 
 foreach ($contents as $key => $content) {
     if (isset($_GET[$key])) {
@@ -15,9 +15,7 @@ foreach ($contents as $key => $content) {
     }
 }
 
-// Если контент не найден, можно вернуть в какой-то начальный вид
 if ($selectedContent === null) {
-    // Можно перенаправить или показать ошибку
     echo "Контент не найден.";
     exit;
 }
@@ -36,12 +34,10 @@ $contentBuy = $selectedContent["buy"];
     <link rel="stylesheet" href="style.css">
     <title>AngusMarkets - Заказ проекта <?php echo $contentName ?></title>
     <style>
-        /* Ваши стили, включая уже добавленные */
         .project form input[type="submit"]:hover {
             background-color: #45a049;
         }
 
-        /* Стили для боковой панели корзины */
         .cart-panel {
             position: fixed;
             top: 50%;
@@ -51,12 +47,12 @@ $contentBuy = $selectedContent["buy"];
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            width: 300px; /* Ширина боковой панели */
-            display: none; /* Скрываем по умолчанию */
+            width: 300px; 
+            display: none; 
         }
 
         .cart-panel.show {
-            display: block; /* Показываем при добавлении класса */
+            display: block; 
         }
 
         .cart-panel h3 {
@@ -95,7 +91,6 @@ $contentBuy = $selectedContent["buy"];
             color: red;
         }
 
-        /* Кнопка для открытия корзины */
         .open-cart-button {
             position: fixed;
             bottom: 20px;
@@ -144,7 +139,7 @@ $contentBuy = $selectedContent["buy"];
             <span class="cart-close" onclick="closeCart()">&times;</span>
             <h3>Корзина</h3>
             <div id="cart-items">
-                <!-- Здесь будут отображаться товары -->
+                
             </div>
             <form action="help.php" method="GET" onsubmit="return saveCartData()">
                 <input type="hidden" name="cartData" id="cartData" value="">
@@ -152,7 +147,7 @@ $contentBuy = $selectedContent["buy"];
             </form>
         </div>
 
-        <!-- Кнопка для открытия корзины -->
+        
         <button class="open-cart-button" onclick="toggleCart()">🛒</button>
     </main>
 
@@ -166,7 +161,6 @@ $contentBuy = $selectedContent["buy"];
         const cartPanel = document.getElementById("cart-panel");
         const cartItems = document.getElementById("cart-items");
 
-        // Загружаем корзину из localStorage
         function loadCart() {
             cart = JSON.parse(localStorage.getItem('cart')) || [];
             cart.forEach(item => {
@@ -174,7 +168,6 @@ $contentBuy = $selectedContent["buy"];
             });
         }
 
-        // Добавление товара в корзину на страницу
         function addCartItem(name, price) {
             const cartItem = document.createElement("div");
             cartItem.classList.add("cart-item");
@@ -186,20 +179,17 @@ $contentBuy = $selectedContent["buy"];
             cartItems.appendChild(cartItem);
         }
 
-        // Закрытие корзины
         function closeCart() {
             cartPanel.classList.remove("show");
         }
 
-        // Переключение видимости корзины
         function toggleCart() {
             cartPanel.classList.toggle("show");
         }
 
-        // Сохранение данных корзины перед переходом на другую страницу
         function saveCartData() {
-            document.getElementById('cartData').value = JSON.stringify(cart); // Сохраняем данные перед отправкой формы
-            return true; // Позволяем отправить форму
+            document.getElementById('cartData').value = JSON.stringify(cart); 
+            return true; 
         }
 
         document.getElementById('add-to-cart-button').addEventListener('click', function() {
@@ -207,26 +197,26 @@ $contentBuy = $selectedContent["buy"];
                 name: "<?php echo $contentName; ?>",
                 price: "<?php echo $contentBuy; ?>"
             };
-            cart.push(product); // Добавляем продукт в корзину
+            cart.push(product); 
             addCartItem(product.name, product.price);
-            localStorage.setItem('cart', JSON.stringify(cart)); // Сохраняем корзину
-            toggleCart(); // Открываем корзину сразу после добавления товара
+            localStorage.setItem('cart', JSON.stringify(cart)); 
+            toggleCart(); 
         });
 
         function removeFromCart(name) {
-            cart = cart.filter(item => item.name !== name); // Убираем товар по имени
-            localStorage.setItem('cart', JSON.stringify(cart)); // Обновляем данные в localStorage
-            updateCart(); // Обновляем отображение корзины
+            cart = cart.filter(item => item.name !== name); 
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCart(); 
         }
 
         function updateCart() {
-            cartItems.innerHTML = ''; // Очищаем элементы корзины
+            cartItems.innerHTML = '';
             cart.forEach(item => {
-                addCartItem(item.name, item.price); // Добавляем оставшиеся товары
+                addCartItem(item.name, item.price); 
             });
         }
 
-        document.addEventListener('DOMContentLoaded', loadCart); // Загружаем корзину при загрузке страницы
+        document.addEventListener('DOMContentLoaded', loadCart); 
     </script>
 </body>
 </html>
