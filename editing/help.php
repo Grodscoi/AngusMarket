@@ -7,42 +7,42 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4; /* Цвет фона страницы */
-            color: #333; /* Цвет текста */
-            margin: 0; /* Убираем отступы */
-            padding: 0; /* Убираем отступы */
+            background-color: #f4f4f4; 
+            color: #333; 
+            margin: 0; 
+            padding: 0;
         }
         .container {
-            margin: 20px auto; /* Центрирование контейнера */
+            margin: 20px auto; 
             padding: 20px;
-            border: 1px solid #ccc; /* Цвет рамки */
-            border-radius: 5px; /* Закругления углов */
-            background-color: #fff; /* Фоновый цвет контейнера */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
-            max-width: 600px; /* Максимальная ширина */
+            border: 1px solid #ccc; 
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
         }
         h1 {
-            text-align: center; /* Центрирование заголовка */
-            color: #4CAF50; /* Цвет заголовка */
+            text-align: center; 
+            color: #4CAF50; 
         }
         h2 {
-            text-align: center; /* Центрирование заголовка */
-            color: #555; /* Цвет второстепенного заголовка */
+            text-align: center; 
+            color: #555; 
         }
         ul {
-            list-style-type: none; /* Убираем маркеры списка */
-            padding: 0; /* Убираем отступы */
+            list-style-type: none;
+            padding: 0; 
         }
         li {
-            padding: 10px; /* Отступы внутри элементов списка */
-            border-bottom: 1px solid #eee; /* Низняя граница элементов списка */
+            padding: 10px; 
+            border-bottom: 1px solid #eee; 
         }
         a {
-            color: #4CAF50; /* Цвет ссылок */
-            text-decoration: none; /* Убираем подчеркивание */
+            color: #4CAF50; 
+            text-decoration: none; 
         }
         a:hover {
-            text-decoration: underline; /* Подчеркивание при наведении */
+            text-decoration: underline; 
         }
         header {
     background-color: #4CAF50;
@@ -92,12 +92,10 @@ nav ul li a:hover {
     <div class="container">
         <h1>Данные Корзины</h1>
         <?php
-        // Проверяем, есть ли данные в GET-запросе
         if (!empty($_GET)) {
             echo "<h2>Полученные данные:</h2>";
             echo "<ul>";
 
-            // Проходим по всем полям GET-запроса и выводим их
             foreach ($_GET as $key => $value) {
                 echo "<li><strong>" . htmlspecialchars($key) . ":</strong> " . htmlspecialchars($value) . "</li>";
             }
