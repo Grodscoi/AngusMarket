@@ -8,32 +8,32 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9; /* Светлый фон */
-            color: #333; /* Темный цвет текста */
+            background-color: #f4f4f9; 
+            color: #333;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Выравниваем содержимое к верху */
-            min-height: 100vh; /* Занимаем всю высоту экрана */
+            justify-content: flex-start; 
+            min-height: 100vh; 
         }
 
         header {
             background-color: #4CAF50;
-            color: white; /* Цвет текста заголовка */
-            padding: 20px 0; /* Отступы сверху и снизу */
-            text-align: center; /* Выравнивание по центру */
-            width: 100%; /* Занимаем всю ширину */
+            color: white; 
+            padding: 20px 0; 
+            text-align: center;
+            width: 100%; 
         }
 
         h1 {
-            margin: 0; /* Удаляем отступы по умолчанию */
-            font-size: 28px; /* Размер заголовка */
+            margin: 0; 
+            font-size: 28px; 
         }
         nav {
             background-color: #333;
-            width: 100%; /* Занимаем всю ширину */
+            width: 100%;
         }
 
         nav ul {
@@ -62,12 +62,12 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            max-width: 800px; /* Максимальная ширина контейнера */
-            margin: 50px auto; /* Отступы сверху и снизу, авто-отступы по бокам */
+            max-width: 800px;
+            margin: 50px auto; 
             padding: 30px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            background-color: white; /* Белый фон для контейнера */
-            text-align: center; /* Выравнивание по центру */
+            background-color: white;
+            text-align: center;
         }
 
         .contact-photo {
@@ -108,25 +108,24 @@
             padding: 15px 0;
             text-align: center;
             width: 100%;
-            position: fixed; /* Фиксируем позицию внизу */
-            bottom: 0; /* Прикрепляем к низу экрана */
+            position: fixed;
+            bottom: 0; 
         }
 
-        /* Стиль для более широких экранов */
         @media (min-width: 768px) {
             .contact-container {
-                flex-direction: row; /* Горизонтальное расположение на больших экранах */
-                align-items: center; /* Выравнивание по центру */
-                justify-content: center; /* Распределение элементов по центру */
+                flex-direction: row; 
+                align-items: center; 
+                justify-content: center; 
             }
 
             .contact-info {
-                text-align: left; /* Выравнивание влево */
-                margin-left: 30px; /* Отступ слева для информации */
+                text-align: left; 
+                margin-left: 30px; 
             }
 
             .contact-photo {
-                margin-bottom: 0; /* Удаляем нижний отступ для фотографии */
+                margin-bottom: 0; 
             }
         }
     </style>
